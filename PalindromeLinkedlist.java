@@ -26,8 +26,12 @@ class Solution {
         ListNode firstHalf = head;
         ListNode secondHalf = reverseList(slow);
     
-        while(firstHalf.val != secondHalf.val){
-            return false;
+        while (secondHalf != null) {
+            if (firstHalf.val != secondHalf.val) {
+                return false;
+            }
+            firstHalf = firstHalf.next;
+            secondHalf = secondHalf.next;
         }
 
         firstHalf = firstHalf.next;
